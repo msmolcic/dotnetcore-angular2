@@ -1,0 +1,56 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="sr-only">Toggle navigation</i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </button>
+            <a class='navbar-brand' [routerLink]="['']">
+                JOGGER
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" *showAuthed="true">
+                <li *ngIf="authService.hasUserRole()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['Users', currentUser.id, 'JoggingRoutes']">
+                        <i class='fa fa-trophy'></i> Running Records
+                    </a>
+                </li>
+                <li *ngIf="authService.hasUserRole()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['Users', currentUser.id, 'WeeklyRecords']">
+                        <i class='fa fa-book'></i> Weekly Records
+                    </a>
+                </li>
+                <li *ngIf="authService.hasAdminRole() || authService.hasUserManagerRole()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['Users']">
+                        <i class="fa fa-users"></i> Users
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li *showAuthed="true">
+                    <a (click)="logout()" [routerLink]="['/']">
+                        <i class='fa fa-sign-out'></i> Logout
+                    </a>
+                </li>
+                <li *showAuthed="true" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                  <a [routerLink]="['Users', currentUser.id]">
+                      <i class='fa fa-user'></i> {{ currentUser.username }}
+                  </a>
+                </li>
+                <li *showAuthed="false" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['Register']">
+                        <i class='fa fa-user'></i> Register
+                    </a>
+                </li>
+                <li *showAuthed="false" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+                    <a [routerLink]="['Login']">
+                        <i class='fa fa-sign-in'></i> Login
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

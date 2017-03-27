@@ -1,0 +1,99 @@
+<div class="page-header">
+  <h2 class="text-center">{{ userRegistrationMode ? 'REGISTER' : 'EDIT PERSONAL INFO' }}</h2>
+</div>
+<div class="row">
+  <div class="jumbotron col-sm-12 col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+            <div *ngIf="userRegistrationMode" class="form-group">
+              <label class="control-label">Username</label>
+              <input formControlName="username"
+                     placeholder="Username"
+                     class="form-control"
+                     type="text" />
+              <div *ngIf="!userForm.get('username').valid" class="alert alert-danger">
+                {{ userForm.get('username').getError('remote') }}
+              </div>
+            </div>
+            <div *ngIf="userRegistrationMode" class="form-group">
+              <label class="control-label">Email</label>
+              <input formControlName="email"
+                     placeholder="Email"
+                     class="form-control"
+                     type="text" />
+              <div *ngIf="!userForm.get('email').valid" class="alert alert-danger">
+                {{ userForm.get('email').getError('remote') }}
+              </div>
+            </div>
+            <div *ngIf="userRegistrationMode" class="form-group">
+              <label class="control-label">Password</label>
+              <input formControlName="password"
+                     placeholder="Password"
+                     class="form-control"
+                     type="password" />
+              <div *ngIf="!userForm.get('password').valid" class="alert alert-danger">
+                {{ userForm.get('password').getError('remote') }}
+              </div>
+            </div>
+            <div *ngIf="userRegistrationMode" class="form-group">
+              <label class="control-label">Confirm password</label>
+              <input formControlName="confirmPassword"
+                     placeholder="Confirm password"
+                     class="form-control"
+                     type="password" />
+              <div *ngIf="!userForm.get('confirmPassword').valid" class="alert alert-danger">
+                {{ userForm.get('confirmPassword').getError('remote') }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input formControlName="name"
+                     placeholder="Name"
+                     class="form-control"
+                     type="text" />
+              <div *ngIf="!userForm.get('name').valid" class="alert alert-danger">
+                {{ userForm.get('name').getError('remote') }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Surname</label>
+              <input formControlName="surname"
+                     placeholder="Surname"
+                     class="form-control"
+                     type="text" />
+              <div *ngIf="!userForm.get('surname').valid" class="alert alert-danger">
+                {{ userForm.get('surname').getError('remote') }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Birth date</label>
+              <input formControlName="birthDate" class="form-control" type="date" />
+              <div *ngIf="!userForm.get('birthDate').valid" class="alert alert-danger">
+                {{ userForm.get('birthDate').getError('remote') }}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Gender</label>
+              <div>
+                <label *ngFor="let gender of genders" class="radio-inline">
+                  <input formControlName="gender"
+                         [checked]="gender.value === userForm.value.gender"
+                         [value]="gender.value"
+                         type="radio" /> {{ gender.name }}
+                </label>
+              </div>
+              <div *ngIf="!userForm.get('gender').valid" class="alert alert-danger">
+                {{ userForm.get('gender').getError('remote') }}
+              </div>
+            </div>
+          </fieldset>
+          <button class="btn btn-default pull-right" [disabled]="!userForm.valid" type="submit">
+            {{ userRegistrationMode ? 'Register' : 'Save changes' }}
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

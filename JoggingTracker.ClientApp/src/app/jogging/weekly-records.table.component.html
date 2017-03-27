@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h2 class="text-center">WEEKLY RECORDS</h2>
+</div>
+<br />
+<div  class="row">
+  <div class="col-xs-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">From</th>
+          <th class="text-center">Until</th>
+          <th class="text-center">Average Distance (km)</th>
+          <th class="text-center">Average Speed (km/h)</th>
+          <th><!-- View weekly routes --></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="weeklyRecords && weeklyRecords.length > 0">
+        <tr *ngFor="let record of weeklyRecords">
+          <td class="text-center">
+            {{ record.fromDate | date: 'dd.MM.yyyy.' }}
+          </td>
+          <td class="text-center">
+            {{ record.untilDate | date: 'dd.MM.yyyy.' }}
+          </td>
+          <td class="text-center">
+            {{ record.averageDistance }}
+          </td>
+          <td class="text-center">
+            {{ record.averageSpeed }}
+          </td>
+          <td class="text-center">
+            <button (click)="viewRoutes(record)" class="btn btn-sm btn-success" title="View jogging routes for this week">
+              <i class="fa fa-trophy"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="!weeklyRecords || weeklyRecords.length === 0">
+        <tr>
+          <td class="text-center" colspan="100%">
+            <h3>No results to show.</h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<a (click)="closeWindow()" class="alert-popup-window" title="Click to close the window">
+    <div *ngIf="message" [ngClass]="{ 'text-center alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">
+        <i [ngClass]="{ 'fa': message, 'fa-check-circle-o': message.type === 'success', 'fa-times-circle-o': message.type === 'error' }"></i> {{ message.text }}
+    </div>
+</a>

@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h2 class="text-center">LOGIN</h2>
+</div>
+<div class="row">
+  <div class="jumbotron col-sm-12 col-md-8 col-md-offset-2">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+          <fieldset [disabled]="isSubmitting">
+            <div class="form-group">
+              <label class="control-label">Username</label>
+              <input formControlName="username"
+                     placeholder="Username"
+                     class="form-control"
+                     type="text" />
+            </div>
+            <div class="form-group">
+              <label class="control-label">Password</label>
+              <input formControlName="password"
+                     placeholder="Password"
+                     class="form-control"
+                     type="password" />
+            </div>
+          </fieldset>
+          <button class="btn btn-default pull-right" [disabled]="!loginForm.valid" type="submit">
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

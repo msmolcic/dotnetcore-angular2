@@ -1,0 +1,80 @@
+<div class="page-header">
+  <h2 class="text-center">JOGGING ROUTES</h2>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <div class="row">
+      <div class="col-xs-12">
+        <label class="control-label">From</label>
+        <input [(ngModel)]="filter.fromDate" class="form-control" type="date" />
+      </div>
+      <div class="col-xs-12">
+        <label class="control-label">Until</label>
+        <input [(ngModel)]="filter.untilDate" class="form-control" type="date" />
+      </div>
+      <div class="col-xs-12">
+        <button class="btn btn-primary pull-right" type="button" (click)="applyFilter()">
+          <i class="fa fa-search"></i> Filter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="row">
+  <div class="col-xs-12">
+    <a [routerLink]="['Add']" class="btn btn-primary pull-right" title="Add new route">
+      <i class="fa fa-plus"></i> Add route
+    </a>
+  </div>
+</div>
+<br />
+<div  class="row">
+  <div class="col-xs-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Date</th>
+          <th class="text-center visible-sm visible-md visible-lg">Distance (km)</th>
+          <th class="text-center visible-sm visible-md visible-lg">Total Time</th>
+          <th class="text-center">Average Speed (km/h)</th>
+          <th><!-- Edit button--></th>
+          <th><!-- Delete button--></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="joggingRoutes && joggingRoutes.length > 0">
+        <tr *ngFor="let joggingRoute of joggingRoutes">
+          <td class="text-center">
+            {{ joggingRoute.date | date: 'dd.MM.yyyy.' }}
+          </td>
+          <td class="text-center visible-sm visible-md visible-lg">
+            {{ joggingRoute.distanceKilometers }}
+          </td>
+          <td class="text-center visible-sm visible-md visible-lg">
+            {{ joggingRoute.totalTime }}
+          </td>
+          <td class="text-center">
+            {{ joggingRoute.averageSpeed }}
+          </td>
+          <td class="text-center">
+            <a [routerLink]="[joggingRoute.id]" class="btn btn-sm btn-primary" title="Edit jogging route">
+              <i class="fa fa-edit"></i>
+            </a>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-danger" (click)="deleteRoute(joggingRoute)" title="Delete jogging route">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="!joggingRoutes || joggingRoutes.length === 0">
+        <tr>
+          <td class="text-center" colspan="100%">
+            <h3>No jogging routes added.</h3>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

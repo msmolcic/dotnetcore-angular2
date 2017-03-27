@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.Model", "JoggingTracker.Model\JoggingTracker.Model.csproj", "{3BC8F938-5282-4AE7-A74F-3555F4DD0D75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.DataAccess", "JoggingTracker.DataAccess\JoggingTracker.DataAccess.csproj", "{0561B107-F353-4DB8-980E-824F6A84DA1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.Infrastructure", "JoggingTracker.Infrastructure\JoggingTracker.Infrastructure.csproj", "{2EF4BC7E-E54E-4EAF-914B-5973382F8A43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.Shared", "JoggingTracker.Shared\JoggingTracker.Shared.csproj", "{86E4CC78-28A0-46AB-9F21-B0D9EFB24149}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.Service", "JoggingTracker.Service\JoggingTracker.Service.csproj", "{A93360B7-4ABC-4DB5-A73A-78DF104D079F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.WebApi", "JoggingTracker.WebApi\JoggingTracker.WebApi.csproj", "{7485A472-3CB4-494E-A6B9-11B149F664D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoggingTracker.Service.Test", "JoggingTracker.Service.Test\JoggingTracker.Service.Test.csproj", "{A34FB13C-9B39-4136-8BB1-BDA23F0F67DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BC8F938-5282-4AE7-A74F-3555F4DD0D75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC8F938-5282-4AE7-A74F-3555F4DD0D75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC8F938-5282-4AE7-A74F-3555F4DD0D75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC8F938-5282-4AE7-A74F-3555F4DD0D75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0561B107-F353-4DB8-980E-824F6A84DA1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0561B107-F353-4DB8-980E-824F6A84DA1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0561B107-F353-4DB8-980E-824F6A84DA1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0561B107-F353-4DB8-980E-824F6A84DA1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF4BC7E-E54E-4EAF-914B-5973382F8A43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF4BC7E-E54E-4EAF-914B-5973382F8A43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF4BC7E-E54E-4EAF-914B-5973382F8A43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF4BC7E-E54E-4EAF-914B-5973382F8A43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E4CC78-28A0-46AB-9F21-B0D9EFB24149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E4CC78-28A0-46AB-9F21-B0D9EFB24149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E4CC78-28A0-46AB-9F21-B0D9EFB24149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E4CC78-28A0-46AB-9F21-B0D9EFB24149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A93360B7-4ABC-4DB5-A73A-78DF104D079F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A93360B7-4ABC-4DB5-A73A-78DF104D079F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A93360B7-4ABC-4DB5-A73A-78DF104D079F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A93360B7-4ABC-4DB5-A73A-78DF104D079F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7485A472-3CB4-494E-A6B9-11B149F664D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7485A472-3CB4-494E-A6B9-11B149F664D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7485A472-3CB4-494E-A6B9-11B149F664D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7485A472-3CB4-494E-A6B9-11B149F664D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34FB13C-9B39-4136-8BB1-BDA23F0F67DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34FB13C-9B39-4136-8BB1-BDA23F0F67DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34FB13C-9B39-4136-8BB1-BDA23F0F67DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34FB13C-9B39-4136-8BB1-BDA23F0F67DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

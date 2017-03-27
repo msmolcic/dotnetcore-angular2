@@ -1,0 +1,59 @@
+/* Global styles. Other style files can also be imported here. */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    color: #37646b;
+}
+
+th {
+    color: #fff;
+    background-color: #37586b;
+}
+
+.page-header {
+    color: #37586b;
+}
+
+.jumbotron {
+    color: #fff;
+    background-color: #37586b;
+}
+
+.btn-primary {
+    background-color: #37586b;
+    border-color: #677a78;
+}
+
+.btn-primary:hover {
+    background-color: #1f394d;
+    border-color: #fff;
+}
+
+.btn-default {
+    color: #37586b;
+    background-color: #fff;
+}
+
+.btn-default:hover {
+    color: #37586b;
+    background-color: #f5f5f5;
+}
+
+.navbar-inverse {
+    color: #fff;
+    background-color: #37586b;
+}
+
+.navbar-inverse .nav > li > a,
+.navbar-header > a.navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .nav > li > a:focus,
+.navbar-inverse .nav > li > a:hover,
+.navbar-inverse .nav > li.active > a,
+.navbar-header > a.navbar-brand:hover {
+    color: #37586b;
+    background-color: #fff;
+}

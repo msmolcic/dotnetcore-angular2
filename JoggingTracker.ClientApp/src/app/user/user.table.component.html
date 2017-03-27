@@ -1,0 +1,51 @@
+<div class="page-header">
+  <h2 class="text-center">APPLICATION USERS</h2>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Surname</th>
+          <th class="text-center visible-sm visible-md visible-lg">Birth Date</th>
+          <th class="text-center visible-md visible-lg">Gender</th>
+          <th *ngIf="authService.hasAdminRole()"></th>
+          <th><!-- Edit button--></th>
+          <th><!-- Delete button--></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="text-center">
+            {{ user.name }}
+          </td>
+          <td class="text-center">
+            {{ user.surname }}
+          </td>
+          <td class="text-center visible-sm visible-md visible-lg">
+            {{ user.birthDate | date: 'dd.MM.yyyy.' }}
+          </td>
+          <td class="text-center visible-md visible-lg">
+            {{ displayGender(user.gender) }}
+          </td>
+          <td *ngIf="authService.hasAdminRole()" class="text-center">
+            <a [routerLink]="[user.id, 'JoggingRoutes']" class="btn btn-sm btn-warning" title="User jogging routes">
+              <i class="fa fa-universal-access"></i>
+            </a>
+          </td>
+          <td class="text-center">
+            <a [routerLink]="[user.id]" class="btn btn-sm btn-primary" title="Edit user">
+              <i class="fa fa-edit"></i>
+            </a>
+          </td>
+          <td class="text-center">
+            <button class="btn btn-sm btn-danger" (click)="deleteUser(user)" title="Delete user">
+              <i class="fa fa-trash-o"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
